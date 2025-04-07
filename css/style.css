@@ -1169,23 +1169,23 @@
             width: 60px;
             height: 60px;
             background-color: #25D366;
+            color: white;
+            font-size: 28px;
+            text-align: center;
+            line-height: 60px;
             border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
             z-index: 9999;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s ease;
         }
-
-        .whatsapp-float svg {
-            width: 28px;
-            height: 28px;
-        }
-
+        
         .whatsapp-float:hover {
             transform: scale(1.1);
+            background-color: #1ebe57;
+            color: white;
         }
+        
+        
 
 
         /* ícones rodapé */
