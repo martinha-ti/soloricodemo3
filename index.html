@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solo Rico</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Banner */
+        .carousel-item {
+            height: 95vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .carousel-overlay {
+            background: rgba(0, 0, 0, 0.5);
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
+
+        .carousel-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            z-index: 2;
+        }
+
+        /* Ajuste das caixinhas sobre o banner */
+        .cards-over-banner {
+            margin-top: -40px;
+            /* Menor sobreposição no banner */
+            position: relative;
+            z-index: 10;
+        }
+
+        .card {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 15px;
+            max-width: 200px;
+            /* Limita o tamanho dos cards */
+            margin: 0 auto;
+            /* Centraliza os cards */
+        }
+
+        .card-icon {
+            width: 60px;
+            /* Ícone menor */
+            height: 60px;
+            margin: 0 auto 15px;
+            /* Espaço abaixo do ícone */
+        }
+
+        .card-icon img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .card-title {
+            font-size: 0.9rem;
+            /* Tamanho menor do texto */
+            font-weight: bold;
+            color: #333;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+
+        /* Nova seção: Agricultura e Produtos */
+        .agriculture-section {
+            background-color: #f9f9f9;
+            /* Cor de fundo */
+        }
+
+        .image-container {
+            position: relative;
+        }
+
+        .image-container .main-image {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .image-container .small-image {
+            position: absolute;
+            bottom: -20px;
+            left: 20px;
+            width: 40%;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            color: #f4a51c;
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .section-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle .highlight {
+            color: #28a745;
+            /* Verde destacado */
+            font-weight: bold;
+        }
+
+        .section-description {
+            color: #777;
+            margin-bottom: 20px;
+        }
+
+        .icons-list {
+            margin-bottom: 20px;
+        }
+
+        .icon-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .icon-item .icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            color: #28a745;
+        }
+
+        .benefits-list li {
+            margin-bottom: 8px;
+        }
+
+        /* Seção de Destaques */
+        .highlights-section {
+            background-color: #fafafa;
+            /* Fundo claro */
+        }
+
+        .highlights-section .section-title {
+            color: #f4a51c;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .highlights-section .section-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .highlight-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .highlight-card .card-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .highlight-card .card-body {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .highlight-card .card-icon {
+            width: 40px;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+        .highlight-card .card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Seção de Desenvolvimento */
+        .development-section {
+            background-image: url('assets/img/germinando-solo-rico.jpg');
+            /* Caminho para a imagem de fundo */
+            background-size: cover;
+            /* Faz a imagem cobrir toda a seção */
+            background-position: center;
+            /* Centraliza a imagem */
+            background-repeat: no-repeat;
+            /* Evita repetição */
+            padding: 60px 0;
+            /* Espaçamento interno */
+            color: white;
+            /* Texto branco para contraste */
+            position: relative;
+            /* Para adicionar camadas, se necessário */
+            height: 600px;
+        }
+
+        .development-section .section-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffc107;
+        }
+
+        .development-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            /* Sobreposição escura para contraste */
+            z-index: 1;
+            /* Mantém o texto acima */
+        }
+
+        .development-section .container {
+            position: relative;
+            /* Garante que o texto fique acima da sobreposição */
+            z-index: 2;
+        }
+
+        .development-section .section-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .development-text {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+
+
+        /* Seção: Linhas de Produtos */
+        /* Custom 5-colunas com Bootstrap */
+        .custom-col-5 {
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+
+        /* Garante responsividade para telas menores */
+        @media (max-width: 768px) {
+            .custom-col-5 {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+        /* Cartão com imagem e texto sobreposto */
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .image-wrapper:hover {
+            transform: scale(1.03);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
+        /* Texto sobre a imagem */
+        .product-title-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+            font-size: 1rem;
+        }
+
+        /* Seção: News & Blogs */
+        .news-blogs-section {
+            background-color: #f9f9f9;
+            /* Fundo claro */
+        }
+
+        .news-blogs-section .section-title {
+            color: #f4a51c;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .news-blogs-section .section-heading {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .blog-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: scale(1.05);
+            /* Efeito de escala no hover */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+            /* Sombra mais intensa no hover */
+        }
+
+        .blog-card .blog-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .blog-body {
+            padding: 15px;
+            text-align: center;
+            /* Centraliza o conteúdo */
+            position: relative;
+        }
+
+        .blog-badge {
+            display: inline-block;
+            background-color: #28a745;
+            /* Cor verde */
+            color: white;
+            font-size: 0.875rem;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 20px;
+            position: absolute;
+            top: 15px;
+            /* Alinhado verticalmente sobre a imagem */
+            left: 50%;
+            /* Centraliza horizontalmente */
+            transform: translateX(-50%);
+            /* Garante centralização perfeita */
+        }
+
+        .blog-title {
+            margin-top: 55px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Barra Superior -->
+    <div class="top-bar text-center">
+        <span><a href="#"></a></span>
+    </div>
+    <!-- Navbar -->
+    <header class="navbar-section" style="padding-top: 30px;">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+                <!-- Logo -->
+                <a class="navbar-brand" href="#">
+                    <img src="assets/img/logo-branco-solo-rico.png" alt="Logo" class="navbar-logo">
+                    <span class="navbar-subtitle"></span>
+                </a>
+                <!-- Botão de Menu Mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Links -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="index.html">HOME</a></li>
+                        <li class="nav-item"><a class="nav-link" href="empresa.html">A EMPRESA</a></li>
+                        <li class="nav-item"><a class="nav-link" href="para-empresas.html">PARA EMPRESAS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="para-voce.html">PARA VOCÊ</a></li>
+                        <li class="nav-item"><a class="nav-link" href="comex.html">COMEX</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown3" data-bs-toggle="dropdown"
+                                role="button" aria-expanded="false">
+                                ATENDIMENTO
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="dropdown3">
+                                <li><a class="dropdown-item" href="franqueado.html">SEJA UM FRANQUEADO</a></li>
+                                <li><a class="dropdown-item" href="trabalhe-conosco.html">TRABALHE CONOSCO</a></li>
+                                <li><a class="dropdown-item" href="sac.html">SAC</a></li>
+                                <li><a class="dropdown-item" href="contatos.html">CONTATOS</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" href="blog.html">BLOG</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">LOJA</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="dropdown3" data-bs-toggle="dropdown"
+                                role="button" aria-expanded="false">
+                                <img src="assets/img/Brazil.svg" alt="Brasil" class="navbar-flag"> Brasil
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Country 1</a></li>
+                                <li><a class="dropdown-item" href="#">Country 2</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-search"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Cabeçalho -->
+    <!-- <header class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="#"><img src="logo.png" alt="Logo Solo Rico" width="150"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="empresaDropdown" role="button" data-bs-toggle="dropdown">A Empresa</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Quem Somos</a></li>
+              <li><a class="dropdown-item" href="#">Nossa História</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#">Para Empresas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Para Você</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Comex</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Loja</a></li>
+        </ul>
+      </div>
+    </div>
+  </header> -->
+
+
+
+    <!-- Banner Slider -->
+    <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <!-- Slide 1 -->
+            <div class="carousel-item active"
+                style="background-image: url('assets/img/Carrossel-Cultivando-solucoes1.jpg');">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-content">
+                    <h1>Cultivando soluções para uma agricultura de excelência</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <a href="#" class="btn btn-success">Conheça</a>
+                </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="carousel-item"
+                style="background-image: url('assets/img/carrossel-transforme-seu-negocio-solo-rico1.jpg');">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-content">
+                    <h1>Transforme Seu Negócio</h1>
+                    <p>Descubra nossas soluções para o agro.</p>
+                    <a href="#" class="btn btn-success">Saiba Mais</a>
+                </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="carousel-item"
+                style="background-image: url('assets/img/carrossel-inovacao-no-campo-banner-solo-rico.jpg');">
+                <div class="carousel-overlay"></div>
+                <div class="carousel-content">
+                    <h1>Inovação no Campo</h1>
+                    <p>Conheça nossa tecnologia de ponta.</p>
+                    <a href="#" class="btn btn-success">Ver Mais</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Próximo</span>
+        </button>
+    </div>
+
+    <!-- Cartões abaixo do banner -->
+    <div class="container cards-over-banner">
+        <div class="row justify-content-center">
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <img src="assets/img/container.png" alt="Card 1">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">SOLO RICO Tecnologia</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <img src="assets/img/container(1).png" alt="Card 2">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">SOLO RICO <br>Nossas Linhas</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card text-center">
+                    <div class="card-icon">
+                        <img src="assets/img/container(2).png" alt="Card 3">
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">SOLO RICO Soluções</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Agricultura & Produtos -->
+    <section class="agriculture-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Imagens (Esquerda) -->
+                <div class="col-lg-6 text-center text-lg-start">
+                    <div class="image-container">
+                        <img src="assets/img/imagem-circular-maior-home-solo-rico.png" alt="Agriculture"
+                            class="main-image rounded-circle">
+
+                        <img src="assets/img/circulo-menor-home-solo-rico.png" alt="Products" class="small-image">
+                    </div>
+                </div>
+
+                <!-- Texto (Direita) -->
+                <div class="col-lg-6">
+                    <h4 class="section-title">Solo Rico</h4>
+                    <h2 class="section-heading">Cultivando soluções para uma agricultura de excelência</h2>
+                    <p class="section-subtitle">Solo Rico, a parceira do produtor rural <span class="highlight">no
+                            Brasil e no mundo. </span>.</p>
+                    <p class="section-description">
+                        Na Solo Rico, acreditamos que o campo é mais do que terra e cultivo — é vida, história e
+                        progresso. Desde 1989, nossa missão tem sido apoiar o produtor rural, com foco especial no
+                        pequeno e médio agricultor, que impulsiona a economia local e garante a alimentação de inúmeras
+                        famílias.
+                    </p>
+                    <div class="icons-list">
+                        <div class="icon-item">
+                            <img src="assets/img/1.png" alt="Icon 1" class="icon">
+                            <span>Fertilizantes foliares e via solo</span>
+                        </div>
+                        <div class="icon-item">
+                            <img src="assets/img/2.png" alt="Icon 2" class="icon">
+                            <span>Adjuvantes</span>
+                        </div>
+                    </div>
+                    <ul class="benefits-list">
+                        <li>✔ Respeito ao produtor rural</li>
+                        <li>✔ Cuidado com o solo e com as plantas</li>
+                    </ul>
+                    <a href="#" class="btn btn-success mt-3">Saiba Mais</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção de Cards -->
+    <div class="container py-4">
+        <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-md-3">
+                <a href="#" class="text-decoration-none">
+                    <div class="card-custom">
+                        <img src="assets/img/macas.jpg" class="card-img" alt="Maçãs">
+                        <div class="icon-top"><img src="assets/img/icone1-solorico.jpg" alt="Ícone"></div>
+                        <div class="text-overlay">
+                            <h5 class="fw-bold">TOP LIME PRO</h5>
+                        </div>
+                        <div class="icon-bottom">Linha de Adjuvantes</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-3">
+                <a href="#" class="text-decoration-none">
+                    <div class="card-custom">
+                        <img src="assets/img/legumes.jpg" class="card-img" alt="Cesta de frutas">
+                        <div class="icon-top"><img src="assets/img/icone-revolution2-solorico.jpg" alt="Ícone"></div>
+                        <div class="text-overlay">
+                            <h5 class="fw-bold">REVOLUTION</h5>
+                        </div>
+                        <div class="icon-bottom">Linha Protect</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-3">
+                <a href="#" class="text-decoration-none">
+                    <div class="card-custom">
+                        <img src="assets/img/terra.jpg" class="card-img" alt="Planta na mão">
+                        <div class="icon-top"><img src="assets/img/icone-gel-de-plantio3-solorico.jpg" alt="Ícone">
+                        </div>
+                        <div class="text-overlay">
+                            <h5 class="fw-bold">GEL DE PLANTIO</h5>
+                        </div>
+                        <div class="icon-bottom">Linha Titanium Sollus</div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="col-md-3">
+                <a href="#" class="text-decoration-none">
+                    <div class="card-custom">
+                        <img src="assets/img/uvas.jpg" class="card-img" alt="Uvas">
+                        <div class="icon-top"><img src="assets/img/icone-protetor-e700--solorico.jpg" alt="Ícone"></div>
+                        <div class="text-overlay">
+                            <h5 class="fw-bold">PROTETOR E700</h5>
+                        </div>
+                        <div class="icon-bottom">Linha Protect</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Seção de Desenvolvimento Agricultura-->
+    <section class="development-section py-5">
+        <div class="container text-center">
+            <h2 class="section-heading">Há mais de 30 anos espalhando o verde pelo Brasil e agora também pelo mundo.
+            </h2>
+            <div class="row justify-content-center">
+                <!-- Texto -->
+                <div class="col-lg-8">
+                    <p class="development-text">
+                        Transformamos o cuidado com o solo em alta produtividade. Confie em quem entende do campo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Seção: Linhas de Produtos  -->
+    <!-- Seção: Linhas de Produtos  -->
+    <section class="product-lines-section py-5">
+        <div class="container text-center">
+            <h4 class="section-title text-warning fw-bold">Solo Rico</h4>
+            <h2 class="section-heading fw-bold">Linhas de Produtos</h2>
+            <div class="row mt-5 justify-content-center">
+                <!-- Produto 1 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto1.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linhas-de-produtos-titaniun-folicular-solo-rico.jpg" alt="Produto 1"
+                                class="product-image">
+                            <div class="product-title-overlay">TITANIUM FOLIAR</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto2.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linha-de-produtos-titaniun-sollus-solo-rico.jpg" alt="Produto 2"
+                                class="product-image">
+                            <div class="product-title-overlay">TITANIUM SOLLUS</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto3.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linhas-de-produtos-titaniun-protect-solo-rico.jpg" alt="Produto 3"
+                                class="product-image">
+                            <div class="product-title-overlay">PROTECT</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto4.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linhas-de-produtos-adjuvantes-solo-rico.jpg" alt="Produto 4"
+                                class="product-image">
+                            <div class="product-title-overlay">ADJUVANTES</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto5.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linha-de-produtos-vigor-solo-rico.jpg" alt="Produto 5"
+                                class="product-image">
+                            <div class="product-title-overlay">VIGOR</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Seção: News & Blogs -->
+    <section class="news-blogs-section py-5">
+        <div class="container text-center">
+            <h4 class="section-title">Solo Rico</h4>
+            <h2 class="section-heading">News & Blogs</h2>
+            <div class="row mt-4">
+                <!-- Blog Post 1 -->
+                <div class="col-12 col-md-4">
+                    <div class="blog-card">
+                        <img src="assets/img/div.master-news.png" alt="Notícia 1" class="blog-image">
+                        <div class="blog-body">
+                            <span class="blog-badge">AGRONEGÓCIO</span>
+                            <h5 class="blog-title">Agronegócio Brasileiro: Descubra o que irá Impulsionar o Crescimento
+                                em 2024...</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 2 -->
+                <div class="col-12 col-md-4">
+                    <div class="blog-card">
+                        <img src="assets/img/div.master-news(1).png" alt="Notícia 2" class="blog-image">
+                        <div class="blog-body">
+                            <span class="blog-badge">AGRÍCOLAS</span>
+                            <h5 class="blog-title">Tendências da Volatilidade dos Preços das Commodities Agrícolas em
+                                2024...</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blog Post 3 -->
+                <div class="col-12 col-md-4">
+                    <div class="blog-card">
+                        <img src="assets/img/div.master-news(2).png" alt="Notícia 3" class="blog-image">
+                        <div class="blog-body">
+                            <span class="blog-badge">MERCADO</span>
+                            <h5 class="blog-title">Novos Mercados: Abrindo Portas para Pequenos e Médios Produtores
+                                Brasileiros...</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section py-5">
+        <div class="container">
+            <!-- Logo e Descrição -->
+            <div class="row text-center mb-4">
+                <div class="col-12">
+                    <img src="assets/img/div.elementor-element.png" alt="Logo Solo Rico" class="footer-logo mb-3">
+                    <p class="footer-description mx-auto">
+                        A Solo Rico Agrociências é uma empresa 100% brasileira, com sede em São José do Rio Preto, considerada uma das maiores produtoras de fertilizantes do Brasil. Atualmente, opera em todos os Estados e no Distrito Federal.
+
+
+                        <br> Atendimento aos clientes, colaboradores e empresas de segunda à sexta-feira das 09h às 18h
+                        (exceto feriados).
+                    </p>
+                </div>
+            </div>
+
+            <!-- Menus e Informações -->
+            <div class="row">
+
+
+                <!-- Blog -->
+                <div class="col-lg-4 col-md-6 col-12">
+                    <h5 class="footer-heading">Assuntos mais lidos</h5>
+                    <ul class="footer-blog list-unstyled">
+                        <li>
+                            <a href="#">Agronegócio Brasileiro: Descubra o que irá Impulsionar o Crescimento em
+                                2024...</a>
+                            <span>Jul, 2024</span>
+                        </li>
+                        <li>
+                            <a href="#">Tendências da Volatilidade dos Preços das Commodities Agrícolas em 2024...</a>
+                            <span>Jan, 2025</span>
+                        </li>
+                        <li>
+                            <a href="#">Novos Mercados: Abrindo Portas para Pequenos e Médios Produtores
+                                Brasileiros...</a>
+                            <span>Jan, 2025</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Menu -->
+                <div class="col-lg-3 col-md-6 col-12">
+                    <h5 class="footer-heading">Menu</h5>
+                    <ul class="footer-menu list-unstyled">
+                        <li><a href="#">HOME</a></li>
+                        <li><a href="#">A EMPRESA</a></li>
+                        <li><a href="#">PARA EMPRESAS</a></li>
+                        <li><a href="#">PARA VOCÊ</a></li>
+                        <li><a href="#">COMEX</a></li>
+                        <li><a href="#">CONTATOS</a></li>
+                        <li><a href="#">LOJA</a></li>
+                    </ul>
+                </div>
+
+                <!-- Atendimento -->
+                <div class="col-lg-5 col-md-12 col-12">
+                    <h5 class="footer-heading">Atendimento</h5>
+                    <ul class="footer-contact list-unstyled">
+                        <li><i class="fas fa-phone"></i><a style="color: #f9f9f9; text-decoration: none;"
+                                href="https://wa.me/551732316000" target="_blank">(17) 3231-6000<a></a></li>
+                        <li><i class="fas fa-envelope"></i> email@solorico.com.br</li>
+                        <li><i class="fas fa-map-marker-alt"></i> R. Roque de Campos Teixeira, 180 - Distrito
+                            Industrial<br> São José do Rio Preto - SP, 15035-430, Brasil
+                        </li>
+                    </ul>
+                    <form class="footer-form mt-3">
+                        <input type="text" class="form-control" placeholder="Dúvidas?">
+                        <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+
+
+            </div>
+
+            <!-- Copyright -->
+            <div class="footer-bottom text-center mt-4">
+                <p>SOLO RICO &reg; 2025 Todos os direitos reservados | Desenvolvimento Martinha TI</p>
+                <a href="https://wa.me/551732316000" target="_blank">Política e Privacidade</a> | <a href="#">Central
+                    de Atendimento</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão flutuante do WhatsApp -->
+    <!-- Botão flutuante do WhatsApp -->
+    <a href="https://wa.me/551732316000" class="whatsapp-float" target="_blank" aria-label="Converse no WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#ffffff" viewBox="0 0 448 512">
+            <path
+                d="M380.9 97.1C339-4.7 202.3-31.3 110.1 49.1 36.2 108.7 18.4 211.2 62.2 295.3L0 480l188.8-61.3c81.1 36.2 175.7 4.4 224.2-71.6 48.5-76 38.6-175.4-32.1-250zm-47.1 215.6c-5.7 15.6-28.3 29.7-39.2 31.7-10.1 1.9-23 2.7-37.1-2.3-8.5-2.9-19.3-6.3-33.2-12.3-58.5-25.3-96.6-84.2-99.5-88.1-2.9-3.9-23.8-31.8-23.8-60.6s15.1-43.1 20.5-49c5.2-5.7 11.5-7.1 15.3-7.1 3.9 0 7.7 0 11.1.2 3.5.2 8.4-.7 13 9.9 5 11.8 16.9 40.8 18.4 43.8 1.5 2.9 2.5 6.5.5 10.4-2 4-3.7 6.5-7.3 10.1s-7.7 7.8-11 10.5c-3.5 2.9-7.2 6.1-3 12.1s17.5 28.9 37.4 46.8c25.6 22.8 47.2 29.8 52.7 33.1s10.1 2.5 13.9-1.5 15.9-18.5 20.1-24.8 8.4-5.1 13.9-3.1c5.2 2.1 33 15.6 38.6 18.3 5.7 2.6 9.4 3.9 10.7 6.1 1.3 2.3 1.3 13.3-4.5 28.9z" />
+        </svg>
+    </a>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Alterar o cabeçalho ao rolar
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > document.querySelector('.carousel').offsetHeight) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+</body>
+
+</html>
