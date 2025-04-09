@@ -38,6 +38,104 @@
         .container h2 {
             padding-top: 30px;
         }
+
+        /* Seção Sobre a Empresa */
+        .about-section {
+            background-color: #f9f9f9;
+            padding: 90px 0;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            max-width: 100%;
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            color: #333;
+        }
+
+        .about-list li {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .about-list i {
+            color: #28a745;
+            margin-right: 8px;
+        }
+
+        /* Missão, Visão e Valores */
+        .mission-vision-values .card {
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .mission-vision-values .card:hover {
+            transform: scale(1.05);
+        }
+
+        .mission-vision-values .card-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 15px;
+        }
+
+        .mission-vision-values .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* Equipe */
+        .team-section {
+            background-color: #ffffff;
+            padding: 60px 0;
+        }
+
+        .team-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: scale(1.05);
+        }
+
+        .team-image {
+            border-radius: 50%;
+            max-width: 150px;
+            margin-bottom: 15px;
+        }
+
+        .team-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .team-role {
+            font-size: 1rem;
+            color: #28a745;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .mission-vision-values .card {
+                margin-bottom: 20px;
+            }
+
+            .team-card {
+                margin-bottom: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -104,132 +202,191 @@
     <!-- Cabeçalho -->
     <!-- <header class="navbar navbar-expand-lg navbar-light">
     </header> -->
+    <!-- Cabeçalho -->
+    <!-- <header class="navbar navbar-expand-lg navbar-light">
+    </header> -->
 
-    <!-- Seção: Sobre a Empresa -->
 
-    <div class="page-header">
-        <h1>Sobre a Solo Rico</h1>
-    </div>
-    <!-- <div class="container">
-    <h2>Nossa História</h2>
-    <p>A Solo Rico Agrociências tem como objetivo fornecer as melhores soluções agrícolas...</p>
-</div> -->
 
+    <!-- COMEX -->
+    <!-- Cabeçalho da Página -->
+    <section class="page-header">
+        <div class="container text-center">
+            <h1>COMEX - Comércio Exterior</h1>
+            <p>Conectando o Agro Brasileiro com o Mundo.</p>
+        </div>
+    </section>
+
+    <!-- Seção: Nossos Serviços -->
+    <section class="services-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Texto -->
+                <div class="col-lg-6">
+                    <h4 class="section-title">Fertilizantes Sem Fronteiras</h4>
+                    <h2 class="section-heading">Solo Rico no Mercado Internacional</h2>
+                    <p class="section-description">
+                        A Solo Rico Agrociências leva a qualidade e a tecnologia dos fertilizantes brasileiros para
+                        produtores ao redor do mundo. Com experiência no comércio exterior, exportamos soluções
+                        eficientes para lavouras em países como Paraguai, Bolívia e Moçambique, sempre com compromisso
+                        com o desempenho no campo.
+                    </p>
+                    <ul class="services-list">
+                        <li><i class="fas fa-globe"></i><strong> Qualidade que atravessa fronteiras:</strong>
+                            Fertilizantes formulados com matérias-primas de alta performance, desenvolvidos para atender
+                            diferentes tipos de solos e culturas.</li>
+                        <li><i class="fas fa-shipping-fast"></i> <strong>Logística ágil e eficiente:</strong> Processos
+                            de exportação estruturados para garantir entregas rápidas e seguras, mantendo a integridade
+                            dos produtos.</li>
+                        <li><i class="fas fa-handshake"></i> <strong>Atendimento próximo e personalizado:</strong>
+                            Parcerias estratégicas e suporte técnico especializado para cada mercado, garantindo que
+                            nossos parceiros tenham sempre a melhor solução para o seu negócio.</li>
+                    </ul>
+                    <a href="https://wa.me/551732316000" target="_blank" class="btn btn-success mt-3">Saiba Mais</a>
+                </div>
+                <!-- Imagem -->
+                <div class="col-lg-6 text-center">
+                    <img src="assets/img/comex/solo-rico-no-mercado-internacional.jpg" alt="Serviços COMEX" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Vantagens de Trabalhar Conosco -->
+    <section class="advantages-section py-5 bg-light">
+        <div class="container text-center">
+            <h4 class="section-title">Do Brasil para o campo internacional: nutrição eficiente para lavouras em qualquer
+                lugar</h4>
+            <h2 class="section-heading">Leve a produtividade do Brasil para o seu país</h2>
+            <div class="row mt-4">
+                <!-- Vantagem 1 -->
+                <div class="col-md-6">
+                    <div class="advantage-card">
+                        <img src="assets/img/comex/icone-seja-um-distribuidor.svg" alt="Qualidade" class="advantage-icon">
+                        <h5 class="advantage-title">Seja um distribuidor</h5>
+                        <p class="advantage-description">Soluções de alta performance sem fronteiras.</p>
+                    </div>
+                </div>
+                <!-- Vantagem 2 -->
+                <div class="col-md-6">
+                    <div class="advantage-card">
+                        <img src="assets/img/comex/icone-marca-propria.svg" alt="Logística" class="advantage-icon">
+                        <h5 class="advantage-title">Tenha sua marca própria</h5>
+                        <p class="advantage-description">Sua marca aliada à qualidade dos nossos produtos.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção: Parcerias Internacionais -->
+    <section class="partners-section py-5">
+        <div class="container text-center">
+            <h4 class="section-title">Perfil de Distribuidor</h4>
+            <h2 class="section-heading">Quem pode ser um distribuidor Solo Rico?</h2>
+
+            <section class="services-section py-5">
+                <div class="row mt-4">
+                    <div class="col-md-12">
+                        <ul class="services-list" style="text-align: left;">
+                            <li><i class="fas fa-truck"></i><strong> Empresa com canal de distribuição
+                                    estruturado:</strong> Capaz de atender todo o país, garantindo que nossos
+                                fertilizantes cheguem a diferentes regiões com eficiência.</li>
+
+                            <li><i class="fas fa-shipping-fast"></i><strong> Experiência em importação:</strong>
+                                Empresas acostumadas com processos logísticos e regulatórios para importar e distribuir
+                                produtos agropecuários.</li>
+
+                            <li><i class="fas fa-seedling"></i><strong> Atuação no setor agrícola:</strong>
+                                Distribuidores que já trabalham com fertilizantes, defensivos ou outros insumos
+                                agrícolas.</li>
+
+                            <li><i class="fas fa-store"></i><strong> Venda para diferentes públicos:</strong> Empresas
+                                que comercializam diretamente com lojas agropecuárias, revendas agrícolas e até mesmo
+                                com o agricultor final.</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- columm -->
     <section class="about-section py-5">
         <div class="container">
             <div class="row align-items-center">
                 <!-- Imagem da empresa -->
                 <div class="col-lg-6">
-                    <img src="assets/img/empresa/nosso-legado-empresa.jpg" alt="Sobre a Empresa"
-                        class="img-fluid about-image">
+                    <img src="assets/img/comex/etapas-do-processo.jpg" alt="Sobre a Empresa" class="img-fluid about-image">
                 </div>
                 <!-- Texto da empresa -->
                 <div class="col-lg-6">
-                    <h4 class="section-title">Sobre a Solo Rico</h4>
-                    <h2 class="section-heading">Nosso Legado</h2>
-                    <p class="section-description">
-                        Desde 1989, somos especialistas na fabricação de fertilizantes foliares de alta tecnologia,
-                        feitos com matérias-primas de primeira qualidade. Valorizamos o produtor rural, com foco no
-                        cultivo de pequeno e médio porte, e atendemos tanto o mercado nacional quanto internacional,
-                        exportando para países como Paraguai, Bolívia e Moçambique. Cultivamos parcerias para
-                        potencializar resultados no campo.
-                    </p>
-                    <ul class="about-list">
-                        <li><i class="fas fa-check-circle"></i> Tecnologia de ponta e matérias-primas de excelência</li>
-                        <li><i class="fas fa-check-circle"></i> Sustentabilidade e Responsabilidade ambiental</li>
-                        <li><i class="fas fa-check-circle"></i> Atendimento personalizado aos nossos clientes</li>
-                    </ul>
+                    <!-- <h4 class="section-title">Sobre a Solo Rico</h4> -->
+                    <h2 class="section-heading">ETAPAS DO PROCESSO:</h2>
+                    <section class="services-section py-5">
+                        <ul class="services-list">
+                            <li><i class="fas fa-calendar-alt"></i><strong> 1 - Agende sua reunião:</strong> Marque um
+                                encontro para entender suas necessidades e apresentar nossas soluções.</li>
+
+                            <li><i class="fas fa-box-open"></i><strong> 2 - Seleção de produtos:</strong> Escolha os
+                                fertilizantes e insumos ideais para o seu negócio.</li>
+
+                            <li><i class="fas fa-file-invoice-dollar"></i><strong> 3 - Cotação e envio de
+                                    orçamento:</strong> Receba uma proposta detalhada com preços e condições comerciais.
+                            </li>
+
+                            <li><i class="fas fa-clipboard-check"></i><strong> 4 - Processo de registro:</strong>
+                                Formalize sua compra e organize a documentação necessária.</li>
+
+                            <li><i class="fas fa-ship"></i><strong> 5 - Pronto para sua primeira importação:</strong>
+                                Tudo ajustado para receber seus produtos com segurança e eficiência.</li>
+                        </ul>
+                    </section>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Seção: Missão, Visão e Valores -->
-    <section class="mission-vision-values py-5">
-        <div class="container text-center">
-            <h4 class="section-title">Nossos Pilares</h4>
-            <h2 class="section-heading">Missão, Visão e Valores</h2>
+<!-- Seção: base -->
+
+<!-- Seção: Parcerias Internacionais -->
+<section class="partners-section py-5">
+    <div class="container text-center">
+        <h2 class="section-heading">A Solo Rico oferece</h2>
+
+        <section class="services-section py-5">
             <div class="row mt-4">
-                <div class="col-md-4 d-flex align-items-stretch">
-                    <div class="card w-100">
-                        <div class="card-body">
-                            <img src="assets/img/empresa/icone-missao-solo-rico.svg" alt="Missão" class="card-icon">
-                            <h5 class="card-title">Por que existimos?</h5>
-                            <p class="card-text">Espalhar o verde pelo Brasil e pelo mundo, oferecendo aos produtores
-                                tecnologia avançada em nutrição de solo e plantas, desenvolvendo fórmulas personalizadas
-                                a cada cultura.</p>
-                        </div>
-                    </div>
+                <div class="col-md-12">
+                    <ul class="services-list">
+                        <li><i class="fas fa-seedling"></i><strong> Capacitação técnica.</strong> </li>
+
+                        <li><i class="fas fa-seedling"></i><strong> Treinamentos sobre produtos.</strong>
+                            </li>
+
+                        
+                    </ul>
+
                 </div>
-                <div class="col-md-4 d-flex align-items-stretch">
-                    <div class="card w-100">
-                        <div class="card-body">
-                            <img src="assets/img/empresa/icone-visao-solo-rico.svg" alt="Visão" class="card-icon">
-                            <h5 class="card-title">Onde queremos chegar?</h5>
-                            <p class="card-text">Conquistar a satisfação dos agricultores do Brasil e do mundo, através
-                                da qualidades dos produtos e do apoio e suporte de profissionais qualificados no ramo
-                                agrícola.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-flex align-items-stretch">
-                    <div class="card w-100">
-                        <div class="card-body">
-                            <img src="assets/img/empresa/icone-valores-solo-rico.svg" alt="Valores" class="card-icon">
-                            <h5 class="card-title">Quais princípios nos guiam?</h5>
-                            <p class="card-text">Honestidade, transparência, qualidade, inovação, comprometimento e
-                                ética.</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
+        </section>
+    </div>
+</section>
+
+
+    <!-- Seção: Contato -->
+    <section class="contact-section py-5 text-center">
+        <div class="container">
+            <h2 class="section-heading text-white">Pronto para Expandir Seu Negócio?</h2>
+            <p class="text-white">Entre em contato com nossa equipe de COMEX e descubra como podemos ajudar você a
+                conquistar novos mercados.</p>
+            <a href="contato.html" class="btn btn-light btn-lg mt-3">Fale Conosco</a>
         </div>
     </section>
 
-
-    <!-- Seção: timeline -->
-    <section class="timeline-horizontal py-5">
-        <div class="container text-center">
-            <h4 class="section-title">Nossa Jornada</h4>
-            <h2 class="section-heading">Marcos Importantes</h2>
-            <div class="timeline-container">
-                <div class="timeline-box">
-                    <div class="timeline-date">2010</div>
-                    <div class="timeline-content">
-                        <h5 class="timeline-title">Início da Jornada</h5>
-                        <p class="timeline-text">Fundação da empresa com foco em inovação no agronegócio.</p>
-                    </div>
-                </div>
-                <div class="timeline-box">
-                    <div class="timeline-date">2015</div>
-                    <div class="timeline-content">
-                        <h5 class="timeline-title">Primeiro Grande Marco</h5>
-                        <p class="timeline-text">Lançamento da linha de produtos personalizados.</p>
-                    </div>
-                </div>
-                <div class="timeline-box">
-                    <div class="timeline-date">2020</div>
-                    <div class="timeline-content">
-                        <h5 class="timeline-title">Expansão Internacional</h5>
-                        <p class="timeline-text">Filiais abertas em novos países.</p>
-                    </div>
-                </div>
-                <div class="timeline-box">
-                    <div class="timeline-date">2025</div>
-                    <div class="timeline-content">
-                        <h5 class="timeline-title">Futuro Brilhante</h5>
-                        <p class="timeline-text">Novas inovações e expansão global.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-
-
-    <!-- Footer -->
     <!-- Footer -->
     <footer class="footer-section py-5">
         <div class="container">
@@ -334,14 +491,11 @@
     </footer>
 
     <!-- Botão flutuante do WhatsApp -->
-    <!-- Botão flutuante do WhatsApp -->
-
-    <a href="https://wa.me/551732316000" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp"
+    <a href="https://wa.me/5517981863298" class="whatsapp-float" target="_blank" aria-label="Fale conosco no WhatsApp"
         style="color: #f9f9f9; text-decoration: none;">
         <i class="fab fa-whatsapp"></i>
     </a>
     </a>
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
