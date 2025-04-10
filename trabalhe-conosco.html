@@ -88,39 +88,10 @@
     color: #333;
 }
 
-/* Equipe */
-.team-section {
-    background-color: #ffffff;
-    padding: 60px 0;
-}
-
-.team-card {
-    text-align: center;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.team-card:hover {
-    transform: scale(1.05);
-}
-
-.team-image {
-    border-radius: 50%;
-    max-width: 150px;
-    margin-bottom: 15px;
-}
-
-.team-name {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.team-role {
-    font-size: 1rem;
-    color: #28a745;
+/* accordion colors */
+.accordion-button:not(.collapsed){
+    color: #e6e6e6;
+    background-color:#7ac131;
 }
 
 /* Responsividade */
@@ -220,7 +191,7 @@
 
     <!-- Seção FAQ -->
     <section id="faq" class="mb-5">
-      <h2 class="mb-4">Perguntas Frequentes</h2>
+      <h2 class="text-center mb-4">Trabalhe Conosco</h2>
       <div class="accordion" id="faqAccordion">
         <div class="accordion-item">
           <h2 class="accordion-header" id="faq1-heading">
@@ -268,7 +239,7 @@
 
     <!-- Seção de Formulário -->
     <section id="formulario">
-      <h2 class="mb-4">Envie seu Currículo</h2>
+      <h2 class="mb-4 col-lg-6">Envie seu Currículo</h2>
       <form method="post" action="envia_curriculo.php" enctype="multipart/form-data">
         <div class="mb-3">
           <label for="nome" class="form-label">Nome completo:</label>
