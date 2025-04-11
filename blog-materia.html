@@ -65,66 +65,23 @@
             color: #28a745;
             margin-right: 8px;
         }
-
-        /* Missão, Visão e Valores */
-        .mission-vision-values .card {
-            border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .mission-vision-values .card:hover {
-            transform: scale(1.05);
-        }
-
-        .mission-vision-values .card-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 15px;
-        }
-
-        .mission-vision-values .card-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-        }
-
-        /* Equipe */
-        .team-section {
-            background-color: #ffffff;
-            padding: 60px 0;
-        }
-
-        .team-card {
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .team-card:hover {
-            transform: scale(1.05);
-        }
-
-        .team-image {
-            border-radius: 50%;
-            max-width: 150px;
-            margin-bottom: 15px;
-        }
-
-        .team-name {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .team-role {
-            font-size: 1rem;
-            color: #28a745;
-        }
+        .blog-post img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+    .related-posts h5 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .related-posts a {
+      text-decoration: none;
+      color: #198754;
+    }
+    .blog-meta {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 1rem;
+    }
 
         /* Responsividade */
         @media (max-width: 768px) {
@@ -211,76 +168,74 @@
     <section class="page-header">
         <div class="container text-center">
             <h1>Blog</h1>
-            <p>Confira as últimas publicações e fique por dentro das novidades do mundo agro.</p>
+            <p>Conteúdo de valor para sua empresa e colaboradores</p>
         </div>
     </section>
 
-    <!-- Seção: Publicações Recentes -->
-    <section class="blog-section py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Publicações recentes</h2>
-            <div class="row">
 
-                <!-- Postagem 1 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="blog-materia.html" class="blog-card">
-                        <img src="assets/img/blog.jpg" alt="Post 1" class="blog-image">
-                        <div class="blog-content">
-                            <h5 class="blog-title">
-                                Como identificar o impacto do absenteísmo e reduzir o problema na minha empresa?
-                            </h5>
-                            <span class="blog-category">Saúde e Bem-estar nas Empresas</span>
-                            <p class="blog-date">04/12/2024</p>
-                        </div>
-                    </a>
-                </div>
+  </header>
 
-                <!-- Postagem 2 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="materia2.html" class="blog-card">
-                        <img src="assets/img/blog.jpg" alt="Post 2" class="blog-image">
-                        <div class="blog-content">
-                            <h5 class="blog-title">
-                                Banco de horas: o que é, como funciona, CLT, vantagens e como implementar
-                            </h5>
-                            <span class="blog-category">Saúde e Bem-estar nas Empresas</span>
-                            <p class="blog-date">03/12/2024</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Postagem 3 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="materia3.html" class="blog-card">
-                        <img src="assets/img/blog.jpg" alt="Post 3" class="blog-image">
-                        <div class="blog-content">
-                            <h5 class="blog-title">
-                                7 benefícios da meditação que você não conhece
-                            </h5>
-                            <span class="blog-category">Saúde mental e Bem-estar</span>
-                            <p class="blog-date">03/12/2024</p>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Postagem 4 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="materia4.html" class="blog-card">
-                        <img src="assets/img/blog.jpg" alt="Post 4" class="blog-image">
-                        <div class="blog-content">
-                            <h5 class="blog-title">
-                                Psicodrama: Entenda mais sobre essa técnica
-                            </h5>
-                            <span class="blog-category">Saúde mental e Bem-estar</span>
-                            <p class="blog-date">03/12/2024</p>
-                        </div>
-                    </a>
-                </div>
-
-            </div>
+  <main class="container my-5">
+    <div class="row">
+      
+      <!-- Conteúdo da Matéria -->
+      <div class="col-lg-8 blog-post">
+        <h2>Como identificar o impacto do absenteísmo e reduzir o problema na minha empresa?</h2>
+        <div class="blog-meta">
+          <span>Publicado em: 04/12/2024</span> |
+          <span>Categoria: Saúde e Bem-estar nas Empresas</span>
         </div>
-    </section>
+        <img src="assets/img/blog.jpg" alt="Imagem da matéria" class="mb-4">
+        
+        <p>O absenteísmo pode representar um grande desafio para empresas de todos os portes. Quando os colaboradores se ausentam com frequência, a produtividade cai, os custos aumentam e o clima organizacional pode ser afetado.</p>
+        
+        <p>Neste artigo, você vai entender como identificar os sinais do absenteísmo, como mensurar seu impacto e estratégias para reduzir o problema com ações de bem-estar e engajamento.</p>
 
+        <h4>O que é absenteísmo?</h4>
+        <p>Absenteísmo é a ausência frequente e não programada de um colaborador no ambiente de trabalho. Ele pode ocorrer por motivos de saúde, problemas pessoais, desmotivação, entre outros.</p>
+
+        <h4>Como prevenir?</h4>
+        <ul>
+          <li>Promova programas de bem-estar físico e emocional;</li>
+          <li>Ofereça uma escuta ativa para colaboradores;</li>
+          <li>Implemente horários mais flexíveis quando possível.</li>
+        </ul>
+
+        <p>Ficou com dúvidas? Entre em contato conosco!</p>
+
+        <a href="blog.html" class="btn btn-success mt-4">
+            ← Voltar ao Blog
+          </a>
+      </div>
+
+      <!-- Lateral com Notícias Relacionadas -->
+      <div class="col-lg-4 related-posts">
+        <h4 class="mb-4">Veja também</h4>
+
+        <div class="mb-3">
+          <a href="materia2.html">
+            <h5>Banco de horas: o que é, como funciona, CLT, vantagens e como implementar</h5>
+            <p class="text-muted">Categoria: Saúde e Bem-estar nas Empresas</p>
+          </a>
+        </div>
+
+        <div class="mb-3">
+          <a href="materia3.html">
+            <h5>7 benefícios da meditação que você não conhece</h5>
+            <p class="text-muted">Categoria: Saúde mental e Bem-estar</p>
+          </a>
+        </div>
+
+        <div class="mb-3">
+          <a href="materia4.html">
+            <h5>Psicodrama: Entenda mais sobre essa técnica</h5>
+            <p class="text-muted">Categoria: Saúde mental e Bem-estar</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </main>
     <!-- Botão de Voltar ao Topo -->
     <div class="back-to-top">
         <a href="#" class="btn btn-purple"><i class="fas fa-arrow-up"></i></a>
