@@ -66,76 +66,56 @@
             margin-right: 8px;
         }
 
-        /* Missão, Visão e Valores */
-        .mission-vision-values .card {
-            border: none;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            padding: 20px;
-            transition: transform 0.3s ease;
+                /* Seção: Linhas de Produtos */
+        /* Custom 5-colunas com Bootstrap */
+        .custom-col-5 {
+            flex: 0 0 20%;
+            max-width: 20%;
         }
 
-        .mission-vision-values .card:hover {
-            transform: scale(1.05);
-        }
-
-        .mission-vision-values .card-icon {
-            width: 60px;
-            height: 60px;
-            margin-bottom: 15px;
-        }
-
-        .mission-vision-values .card-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #333;
-        }
-
-        /* Equipe */
-        .team-section {
-            background-color: #ffffff;
-            padding: 60px 0;
-        }
-
-        .team-card {
-            text-align: center;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .team-card:hover {
-            transform: scale(1.05);
-        }
-
-        .team-image {
-            border-radius: 50%;
-            max-width: 150px;
-            margin-bottom: 15px;
-        }
-
-        .team-name {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #333;
-        }
-
-        .team-role {
-            font-size: 1rem;
-            color: #28a745;
-        }
-
-        /* Responsividade */
+        /* Garante responsividade para telas menores */
         @media (max-width: 768px) {
-            .mission-vision-values .card {
-                margin-bottom: 20px;
-            }
-
-            .team-card {
-                margin-bottom: 20px;
+            .custom-col-5 {
+                flex: 0 0 50%;
+                max-width: 50%;
             }
         }
+        /* Cartão com imagem e texto sobreposto */
+        .image-wrapper {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .image-wrapper:hover {
+            transform: scale(1.03);
+        }
+
+        .product-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
+        /* Texto sobre a imagem */
+        .product-title-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 0 6px rgba(0, 0, 0, 0.7);
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+            font-size: 1rem;
+        }
+
+
     </style>
 </head>
 
@@ -210,73 +190,134 @@
     <!-- Cabeçalho da Página -->
     <section class="page-header">
         <div class="container text-center">
-            <h1>Blog</h1>
-            <p>Confira as últimas publicações e fique por dentro das novidades do mundo agro.</p>
+            <h1>Linhas de Produtos</h1>
+            <p>Confira nossas linhas de produtos e fique por dentro das novidades do mundo agro.</p>
         </div>
     </section>
 
-    <!-- Seção: Publicações Recentes -->
-    <section class="blog-section py-5">
-        <div class="container">
-            <h2 class="text-center mb-5">Publicações recentes</h2>
-            <div class="row">
-
-                <!-- Postagem 1 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="blog-materia.html" class="blog-card">
-                        <img src="assets/img/blog.jpg" alt="Post 1" class="blog-image">
-                        <div class="blog-content">
-                            <h5 class="blog-title">
-                                Como identificar o impacto do absenteísmo e reduzir o problema na minha empresa?
-                            </h5>
-                            <span class="blog-category">Saúde e Bem-estar nas Empresas</span>
-                            <p class="blog-date">04/12/2024</p>
+    <!-- Seção: Linhas de Produtos  -->
+    <section class="product-lines-section py-5">
+        <div class="container text-center">
+            <h4 class="section-title text-warning fw-bold">Solo Rico</h4>
+            <h2 class="section-heading fw-bold">Linhas de Produtos</h2>
+            <div class="row mt-5 justify-content-center">
+                <!-- Produto 1 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto-interna.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linhas-de-produtos-titaniun-folicular-solo-rico.jpg" alt="Produto 1"
+                                class="product-image">
+                            <div class="product-title-overlay">TITANIUM FOLIAR</div>
                         </div>
                     </a>
                 </div>
 
-                <!-- Postagem 2 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="materia2.html" class="blog-card">
-                        <img src="assets/img/blog.jpg" alt="Post 2" class="blog-image">
-                        <div class="blog-content">
-                            <h5 class="blog-title">
-                                Banco de horas: o que é, como funciona, CLT, vantagens e como implementar
-                            </h5>
-                            <span class="blog-category">Saúde e Bem-estar nas Empresas</span>
-                            <p class="blog-date">03/12/2024</p>
+                <!-- Produto 2 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto-interna.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linha-de-produtos-titaniun-sollus-solo-rico.jpg" alt="Produto 2"
+                                class="product-image">
+                            <div class="product-title-overlay">TITANIUM SOLLUS</div>
                         </div>
                     </a>
                 </div>
 
-                <!-- Postagem 3 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="materia3.html" class="blog-card">
-                        <img src="assets/img/blog.jpg" alt="Post 3" class="blog-image">
-                        <div class="blog-content">
-                            <h5 class="blog-title">
-                                7 benefícios da meditação que você não conhece
-                            </h5>
-                            <span class="blog-category">Saúde mental e Bem-estar</span>
-                            <p class="blog-date">03/12/2024</p>
+                <!-- Produto 3 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto-interna.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linhas-de-produtos-titaniun-protect-solo-rico.jpg" alt="Produto 3"
+                                class="product-image">
+                            <div class="product-title-overlay">PROTECT</div>
                         </div>
                     </a>
                 </div>
 
-                <!-- Postagem 4 -->
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <a href="materia4.html" class="blog-card">
-                        <img src="assets/img/blog.jpg" alt="Post 4" class="blog-image">
-                        <div class="blog-content">
-                            <h5 class="blog-title">
-                                Psicodrama: Entenda mais sobre essa técnica
-                            </h5>
-                            <span class="blog-category">Saúde mental e Bem-estar</span>
-                            <p class="blog-date">03/12/2024</p>
+                <!-- Produto 4 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto-interna.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linhas-de-produtos-adjuvantes-solo-rico.jpg" alt="Produto 4"
+                                class="product-image">
+                            <div class="product-title-overlay">ADJUVANTES</div>
                         </div>
                     </a>
                 </div>
 
+                <!-- Produto 5 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto-interna.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linha-de-produtos-vigor-solo-rico.jpg" alt="Produto 5"
+                                class="product-image">
+                            <div class="product-title-overlay">VIGOR</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Seção: Linhas de Produtos  -->
+    <section class="product-lines-section py-5">
+        <div class="container text-center">
+            <!-- <h4 class="section-title text-warning fw-bold">Solo Rico</h4>
+            <h2 class="section-heading fw-bold">Linhas de Produtos</h2> -->
+            <div class="row mt-5 justify-content-center">
+                <!-- Produto 1 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto1.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linhas-de-produtos-titaniun-folicular-solo-rico.jpg" alt="Produto 1"
+                                class="product-image">
+                            <div class="product-title-overlay">TITANIUM FOLIAR</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto 2 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto2.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linha-de-produtos-titaniun-sollus-solo-rico.jpg" alt="Produto 2"
+                                class="product-image">
+                            <div class="product-title-overlay">TITANIUM SOLLUS</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto 3 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto3.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linhas-de-produtos-titaniun-protect-solo-rico.jpg" alt="Produto 3"
+                                class="product-image">
+                            <div class="product-title-overlay">PROTECT</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto 4 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto4.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linhas-de-produtos-adjuvantes-solo-rico.jpg" alt="Produto 4"
+                                class="product-image">
+                            <div class="product-title-overlay">ADJUVANTES</div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto 5 -->
+                <div class="col-6 col-md custom-col-5">
+                    <a href="produto5.html" class="product-card">
+                        <div class="image-wrapper">
+                            <img src="assets/img/linha-de-produtos-vigor-solo-rico.jpg" alt="Produto 5"
+                                class="product-image">
+                            <div class="product-title-overlay">VIGOR</div>
+                        </div>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -387,7 +428,7 @@
             <div class="footer-bottom text-center mt-4">
                 <p>SOLO RICO &reg; 2025 Todos os direitos reservados | Desenvolvimento Martinha TI</p>
                 <a href="politica-de-privacidade.html" target="_blank">Política e Privacidade</a> | <a href="politica-de-seguranca.html">Política de Segurança</a>
-                    
+                    de Atendimento</a>
             </div>
         </div>
     </footer>
